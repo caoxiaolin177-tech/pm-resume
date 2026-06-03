@@ -1,222 +1,278 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="资深软件产品经理 — 10年经验，从0到1，百万级项目落地" />
-  <title>资深产品经理 · 个人介绍</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资深产品经理 | 10年经验 | 百万级项目操盘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        darkBg: '#0F172A',
+                        lightBg: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+            }
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+        }
+    </style>
 </head>
-<body>
-  <nav class="nav">
-    <a href="#" class="nav-logo">PM<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#expertise">能力</a></li>
-      <li><a href="#highlights">里程碑</a></li>
-      <li><a href="#portfolio">作品</a></li>
-      <li><a href="#philosophy">理念</a></li>
-      <li><a href="#contact">联系</a></li>
-    </ul>
-    <button type="button" class="theme-toggle" id="themeToggle" aria-label="切换明暗模式">
-      <span class="icon-sun" aria-hidden="true">☀</span>
-      <span class="icon-moon" aria-hidden="true">☾</span>
-    </button>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero" id="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="rocket-scene">
-        <div class="rocket">
-          <div class="rocket-body"></div>
-          <div class="rocket-window"></div>
-          <div class="rocket-fin rocket-fin-l"></div>
-          <div class="rocket-fin rocket-fin-r"></div>
-          <div class="rocket-flame"></div>
+<body class="bg-lightBg dark:bg-darkBg text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 dark:bg-darkBg/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gradient">PM · 十年深耕</h1>
+            <button id="darkModeBtn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                <i class="fa fa-moon-o dark:hidden"></i>
+                <i class="fa fa-sun-o hidden dark:block"></i>
+            </button>
         </div>
-        <div class="blocks">
-          <span class="block b1"></span>
-          <span class="block b2"></span>
-          <span class="block b3"></span>
+    </nav>
+
+    <!-- 首屏 Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 section-padding">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="text-4xl md:text-6xl font-bold leading-tight">
+                        十年打磨，始于洞察<br>
+                        <span class="text-gradient">成于落地</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl opacity-90">
+                        我是 <span class="font-semibold">晓琳</span>，一个擅长从 0 到 1、驱动百万级项目落地的资深软件产品经理
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-sm md:text-base font-medium">
+                        <span class="px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">10年经验</span>
+                        <span class="px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">B端/大企业专家</span>
+                        <span class="px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">复杂系统架构</span>
+                        <span class="px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">全生命周期操盘</span>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#portfolio" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition">
+                            了解我的作品
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/10 transition">
+                            聊聊合作机会
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary/20 to-blue-400/20 flex items-center justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800">
+                            <img src="https://picsum.photos/800/800" alt="晓琳 - 个人形象" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">十年打磨，始于洞察，成于落地。</p>
-      <h1 class="hero-title">
-        我是 <span class="highlight-name">[你的名字]</span>，
-        <br />一个擅长从 <em>0 到 1</em>、驱动百万级项目落地的资深软件产品经理。
-      </h1>
-      <ul class="hero-tags">
-        <li>10年经验</li>
-        <li>B端/大企业专家</li>
-        <li>复杂系统架构</li>
-        <li>全生命周期操盘</li>
-      </ul>
-      <div class="hero-cta">
-        <a href="#portfolio" class="btn btn-primary">了解我的作品</a>
-        <a href="#contact" class="btn btn-secondary">聊聊合作机会</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="avatar-frame">
-        <img src="xiaolin.jpg" alt="晓琳 · 个人形象" />
-      </div>
-    </div>
-  </header>
+    </section>
 
-  <!-- Core Expertise -->
-  <section class="section" id="expertise">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">Core Expertise</span>
-        <h2>核心能力看板</h2>
-        <p>为什么是我？3 秒内抓住你的核心硬实力。</p>
-      </header>
-      <div class="cards-grid">
-        <article class="card">
-          <div class="card-icon">1</div>
-          <h3>从 0 到 1 的产品破局力</h3>
-          <p>拒绝套路化改版。我擅长在模糊、复杂的商业诉求中梳理核心逻辑，完成从「战略构想」到「原型落地」的完整闭环，让新产品稳健起跑。</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">2</div>
-          <h3>精准的深度需求调研与分析</h3>
-          <p>拒绝浮于表面的用户反馈。通过严谨的行业调研、用户画像构建及业务场景拆解，看透需求本质，用清晰的 PRD 与业务架构为开发团队高效赋能。</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">3</div>
-          <h3>大企业服务与百万级项目操盘</h3>
-          <p>具备服务大型企业的敏锐商业嗅觉。曾作为核心负责人，主持设计并交付百万级资金规模的软件系统，在高并发、高合规、高稳定性的复杂业务场景中游刃有余。</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">4</div>
-          <h3>跨团队的「翻译官」与粘合剂</h3>
-          <p>懂技术、懂业务、懂设计。10 年间搭建起商业价值与技术落地之间的硬核桥梁，用数据和结果说话，驱动开发、设计与运营团队高质交付。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Highlights -->
-  <section class="section section-alt" id="highlights">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">Highlights</span>
-        <h2>职业高光 / 里程碑</h2>
-        <p>数字不会说谎。</p>
-      </header>
-      <div class="stats-grid">
-        <div class="stat">
-          <span class="stat-number" data-target="10" data-suffix="+">0</span>
-          <span class="stat-label">年软件产品深耕经验</span>
+    <!-- 核心能力看板 -->
+    <section id="core" class="bg-gray-50 dark:bg-gray-900/50 section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-3">核心能力看板</h3>
+                <p class="text-gray-600 dark:text-gray-400">3秒读懂我的核心硬实力</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 能力1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow card-hover">
+                    <div class="text-3xl text-primary mb-4"><i class="fa fa-rocket"></i></div>
+                    <h4 class="text-xl font-bold mb-2">0→1 产品破局力</h4>
+                    <p class="text-gray-600 dark:text-gray-400">拒绝套路化改版，在复杂商业诉求中梳理核心逻辑，完成战略构想到原型落地的完整闭环。</p>
+                </div>
+                <!-- 能力2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow card-hover">
+                    <div class="text-3xl text-primary mb-4"><i class="fa fa-search"></i></div>
+                    <h4 class="text-xl font-bold mb-2">精准需求分析</h4>
+                    <p class="text-gray-600 dark:text-gray-400">拒绝表面反馈，通过深度调研、场景拆解看透需求本质，用专业PRD高效赋能开发团队。</p>
+                </div>
+                <!-- 能力3 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow card-hover">
+                    <div class="text-3xl text-primary mb-4"><i class="fa fa-line-chart"></i></div>
+                    <h4 class="text-xl font-bold mb-2">百万级项目操盘</h4>
+                    <p class="text-gray-600 dark:text-gray-400">具备大型企业服务经验，主持设计百万级资金软件系统，适配高并发、高合规复杂场景。</p>
+                </div>
+                <!-- 能力4 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow card-hover">
+                    <div class="text-3xl text-primary mb-4"><i class="fa fa-users"></i></div>
+                    <h4 class="text-xl font-bold mb-2">跨团队翻译官</h4>
+                    <p class="text-gray-600 dark:text-gray-400">懂技术、懂业务、懂设计，搭建商业与技术的桥梁，驱动团队高质交付，用数据结果说话。</p>
+                </div>
+            </div>
         </div>
-        <div class="stat">
-          <span class="stat-number" data-target="100" data-suffix="%">0</span>
-          <span class="stat-label">从 0 到 1 全周期项目成功率</span>
+    </section>
+
+    <!-- 职业高光数据 -->
+    <section class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-3">职业高光里程碑</h3>
+                <p class="text-gray-600 dark:text-gray-400">数字不会说谎</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-gradient mb-2 counter" data-target="10">0</div>
+                    <p class="text-xl">+ 年软件产品深耕经验</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-gradient mb-2 counter" data-target="100">0</div>
+                    <p class="text-xl">% 从0到1项目成功率</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-gradient mb-2 counter" data-target="1000000">0</div>
+                    <p class="text-xl">+ 单个项目资金规模</p>
+                </div>
+            </div>
         </div>
-        <div class="stat">
-          <span class="stat-prefix">￥</span>
-          <span class="stat-number stat-number-money" data-target="1000000" data-suffix="+">0</span>
-          <span class="stat-label">主持设计的单个项目资金规模</span>
+    </section>
+
+    <!-- 作品集案例 -->
+    <section id="portfolio" class="bg-gray-50 dark:bg-gray-900/50 section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-3">实战作品集</h3>
+                <p class="text-gray-600 dark:text-gray-400">百万级项目实战战绩</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 案例1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow card-hover">
+                    <div class="h-48 bg-primary/10 flex items-center justify-center">
+                        <i class="fa fa-cogs text-6xl text-primary/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">百万级大企业核心系统设计（0→1）</h4>
+                        <div class="space-y-3 text-gray-600 dark:text-gray-400">
+                            <p><strong>项目定位：</strong>大型企业数字化核心支撑平台</p>
+                            <p><strong>核心攻坚：</strong>主导复杂资金流向与业务角色架构设计，保障百万级资金高效稳定流转</p>
+                            <p><strong>交付成果：</strong>按时成功上线，成为企业数字化转型核心系统</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 案例2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow card-hover">
+                    <div class="h-48 bg-primary/10 flex items-center justify-center">
+                        <i class="fa fa-lightbulb-o text-6xl text-primary/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">垂直领域创新产品孵化（0→1）</h4>
+                        <div class="space-y-3 text-gray-600 dark:text-gray-400">
+                            <p><strong>项目定位：</strong>创新型软件产品从0到1孵化</p>
+                            <p><strong>核心攻坚：</strong>独立完成竞品分析、MVP设计与商业模式验证</p>
+                            <p><strong>交付成果：</strong>跑通商业闭环，核心业务指标提升80%+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Portfolio -->
-  <section class="section" id="portfolio">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">Portfolio</span>
-        <h2>作品集与实战案例</h2>
-        <p>战绩展示 — 背景 · 挑战 · 方案 · 结果</p>
-      </header>
-      <div class="tabs" role="tablist">
-        <button type="button" class="tab active" role="tab" aria-selected="true" data-tab="case1">案例一</button>
-        <button type="button" class="tab" role="tab" aria-selected="false" data-tab="case2">案例二</button>
-      </div>
-      <div class="portfolio-panels">
-        <article class="portfolio-panel active" id="case1" role="tabpanel">
-          <h3>百万级大企业核心系统设计（从 0 到 1）</h3>
-          <dl class="case-details">
-            <div class="case-row">
-              <dt>项目定位</dt>
-              <dd>针对大型企业定制的 <strong>智能数据 / 行业供应链 / 物联网</strong> 平台（可按实际修改）。</dd>
+    <!-- 产品哲学 -->
+    <section class="section-padding">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-3">产品哲学</h3>
             </div>
-            <div class="case-row">
-              <dt>核心攻坚</dt>
-              <dd>面对极度复杂的资金流向与业务角色，主导了前期的需求调研与核心模块的架构设计，确保系统承载百万级资金的高效稳定流转。</dd>
-            </div>
-            <div class="case-row">
-              <dt>交付成果</dt>
-              <dd>成功按时上线，成为该企业数字化转型的核心支撑系统。</dd>
-            </div>
-          </dl>
-        </article>
-        <article class="portfolio-panel" id="case2" role="tabpanel" hidden>
-          <h3>[某垂直领域] 创新产品孵化</h3>
-          <dl class="case-details">
-            <div class="case-row">
-              <dt>项目定位</dt>
-              <dd>纯粹从 0 到 1 的创新型软件产品。</dd>
-            </div>
-            <div class="case-row">
-              <dt>核心攻坚</dt>
-              <dd>独立完成竞品分析、市场切入点研判及第一代 MVP 的核心功能设计。</dd>
-            </div>
-            <div class="case-row">
-              <dt>交付成果</dt>
-              <dd>成功帮助团队跑通闭环，验证商业模式，产品上线后 <strong>用户 / 留存 / 效率</strong> 提升了 XX%（请替换为真实数据）。</dd>
-            </div>
-          </dl>
-        </article>
-      </div>
-    </div>
-  </section>
+            <blockquote class="border-l-4 border-primary pl-6 py-4 text-lg md:text-xl italic leading-relaxed">
+                “做一个产品不难，难的是在复杂的商业利益、技术边界和用户体验之间，找到那条最精准的黄金分割线。<br><br>
+                10年的产品经历让我明白，产品经理不仅是‘画原型的画图仔’，更是商业逻辑的翻译官和项目落地的掌舵人。我享受从0到1推演逻辑的烧脑，更敬畏百万级资金和大型企业交付背后的责任。<br><br>
+                我期待加入一个同样对产品有敬畏心、对未来有野心的团队。”
+            </blockquote>
+        </div>
+    </section>
 
-  <!-- Philosophy -->
-  <section class="section section-alt" id="philosophy">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">Philosophy</span>
-        <h2>个人独白 / 产品哲学</h2>
-      </header>
-      <blockquote class="philosophy-quote">
-        <p>做一个产品不难，难的是在复杂的商业利益、技术边界和用户体验之间，找到那条最精准的黄金分割线。10 年的产品经历让我明白，产品经理不仅是「画原型的画图仔」，更是商业逻辑的翻译官和项目落地的掌舵人。</p>
-        <p>我享受从 0 到 1 推演逻辑的烧脑，更敬畏百万级资金和大型企业交付背后的责任。我期待加入一个同样对产品有敬畏心、对未来有野心的团队。</p>
-      </blockquote>
-    </div>
-  </section>
+    <!-- 联系方式 -->
+    <section id="contact" class="bg-primary/5 dark:bg-primary/10 section-padding">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-6">联络通道</h3>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                期待与您共同定义下一款好产品。<br>
+                寻找独当一面、能操盘百万级项目的资深产品战友，随时联系我！
+            </p>
+            <div class="flex flex-col gap-4 text-lg">
+                <div><i class="fa fa-envelope text-primary mr-2"></i> your.email@example.com</div>
+                <div><i class="fa fa-phone text-primary mr-2"></i> 1XX-XXXX-XXXX</div>
+                <div><i class="fa fa-map-marker text-primary mr-2"></i> 当前状态：积极看机会 | 坐标：XX市</div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <h2>期待与您共同定义下一款好产品</h2>
-      <p class="footer-intro">如果您正在寻找一位能够独当一面、既能做深度需求分析又能带百万级项目的资深产品战友，请随时联系我。</p>
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">电子邮箱</span>
-          <a href="mailto:your.email@example.com">your.email@example.com</a>
-        </li>
-        <li>
-          <span class="contact-label">联系电话</span>
-          <a href="tel:+8613800000000">1XX-XXXX-XXXX</a>
-        </li>
-        <li>
-          <span class="contact-label">当前状态</span>
-          <span>积极看机会 · 坐标：[城市]</span>
-        </li>
-      </ul>
-      <p class="copyright">© <span id="year"></span> 资深产品经理个人站</p>
-    </div>
-  </footer>
+    <!-- 页脚 -->
+    <footer class="py-6 border-t border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            © 2025 晓琳 | 十年经验 · 百万项目 · 全周期操盘
+        </div>
+    </footer>
 
-  <script src="script.js"></script>
+    <script>
+        // 暗黑模式切换
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        darkModeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        });
+
+        // 初始化暗黑模式
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+
+        // 数字滚动动效
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.dataset.target);
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            counter.innerText = target.toLocaleString();
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = Math.floor(current).toLocaleString();
+                        }
+                    }, 16);
+                    observer.unobserve(counter);
+                }
+            });
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
